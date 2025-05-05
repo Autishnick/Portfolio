@@ -1,27 +1,62 @@
 import "../styles/ToolBar.css";
+import ThemeChange from "./ThemeChange";
+import { useNavigate } from "react-router-dom";
 
 function ToolBar() {
+  const navigate = useNavigate();
+
+  const gotoLogin = () => {
+    navigate("/login");
+  };
+
+  const gotoAdd = () => {
+    navigate("/add_expense");
+  };
+
+  const gotoDiagrams = () => {
+    navigate("/diagrams");
+  };
+
+  const gotoMain = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <div className="tool-bar">
         <img
           className="prof-img"
-          src="\src\assets\profile.png"
+          src="/src/assets/profile.png"
           alt="Profile image"
+          onClick={gotoLogin}
         ></img>
         <img
           className="prof-img"
-          src="\src\assets\plus.png"
+          src="/src/assets/main-page.png"
+          alt="Main page image"
+          onClick={gotoMain}
+        ></img>
+        <img
+          className="prof-img"
+          src="/src/assets/plus.png"
           alt="Add expence image"
+          onClick={gotoAdd}
         ></img>
         <img
           className="prof-img"
-          src="\src\assets\diagram.png"
+          src="/src/assets/diagram.png"
           alt="Diagrams"
+          onClick={gotoDiagrams}
         ></img>
-        <img className="exit-img" src="\src\assets\exit.png" alt="Exit"></img>
+        <ThemeChange />
+        <img
+          className="exit-img"
+          src="/src/assets/exit.png"
+          alt="Exit"
+        ></img>{" "}
       </div>
     </>
   );
 }
+
 export default ToolBar;
