@@ -20,7 +20,10 @@ function ToolBar() {
   const gotoMain = () => {
     navigate("/");
   };
-
+  const LogOut = () => {
+    localStorage.removeItem("currentUser");
+    navigate("/login");
+  };
   return (
     <>
       <div className="tool-bar">
@@ -53,6 +56,7 @@ function ToolBar() {
           className="exit-img"
           src="/src/assets/exit.png"
           alt="Exit"
+          onClick={LogOut}
         ></img>{" "}
       </div>
     </>
