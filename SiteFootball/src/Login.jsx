@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Clock from "./Clock";
 import ToolBar from "./ToolBar";
 
 function Login() {
